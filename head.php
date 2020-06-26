@@ -23,7 +23,7 @@
                 ?>
                 <a class="reg" href="register.php">voiti</a>
                 <?php else: ?>
-                    <span><?=$_COOKIE['user'] ?></span><br>
+                    <span><?=$_COOKIE['user'] ?></span><span><?=$_COOKIE['name_user'] ?></span><br>
                     <a href="exit.php">exit</a>
                 <?php endif; ?>
                 </div>
