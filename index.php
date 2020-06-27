@@ -12,7 +12,7 @@
                     <a href="medical-card.php">medical-card</a>
                 </div>
                 <div class="main-events__record">
-                    <a href="index.php">record</a>
+                    <a href="record_position.php">record</a>
                 </div>
             </div>
         </div>
