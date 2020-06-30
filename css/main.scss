@@ -1,6 +1,43 @@
+$main-color: #00efd1;
+$secondary-color: #09f;
+$main-color-o: #00efcf70;
+$secondary-color-o: rgba(0, 153, 255, 0.452);
 body {
     margin: 0;
     padding: 0;
+    font-size: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+    
+    .my_button{
+        height: 30px;
+        text-align: center;
+        font-size: 24px;
+        border-radius: 0px;
+        color: white;
+        box-sizing: content-box;
+        padding-bottom: 15px;
+        background-color: $main-color;
+    }
+    .my_button:hover{
+        color: black;
+    }
+    .my_list_button {
+        width: 40vw;
+        min-width: 260px;
+        height: 30px;
+        text-align: center;
+        font-size: 24px;
+        border-radius: 0px;
+        box-sizing: content-box;
+        padding-bottom: 15px;
+        background-color: $main-color;
+    }
+    .my_list_button:hover{
+        background-color: $secondary-color;
+    }
+    .form-control {
+        font-size: 1.4rem;
+    }
 }
 .container {
     width: 90vw!important;
@@ -9,24 +46,47 @@ body {
 header{
     width: 100%;
     height: 60px;
-    background-color: #c4c4c4;
+    background-color: $main-color;
     .head {
         width: 100%;
         text-align: center;
         display: flex;
         justify-content: space-between;
+        &__logo {
+            width: 60px;
+        }
     }
 }
 .main-s {
+    margin-top: 12vw;
+    margin-bottom: 70px;
+
     .main-events {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        &__block {
+            text-align: center;
+            a {
+                transition: .6s;
+            }
+            a:hover {
+                text-shadow: 1px -1px 10px $main-color;
+                text-decoration: none;
+            }
+        }
+    }
+    
+    img {
+        width: 16vw;
+        min-width: 180px;
     }
 }
 .s-r{
     text-align: center;
     form {
         width: 40vw;
+        min-width: 260px;
     }
     .row {
         display: flex;
@@ -35,9 +95,104 @@ header{
         min-width: 348px;
     }
     
+    
 }
-
-
+.hos_s {
+    &__name {
+        background-color: rgba(0, 0, 0, 0.312);
+        color: white;
+        width: 290px;
+        padding: 20px;
+        position: absolute;
+        left: 12%;
+        top: 10%;
+        text-align: center;
+    }
+}
+.contacts_s {
+    margin-bottom: 100px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    &__block {
+        text-align: center;
+        width: 300px;
+        span {
+            font-size: 2rem;
+            color: $main-color;
+        }
+    }
+}
+.list_pos_s {
+    text-align: center;
+    margin-bottom: 70px;
+}
+.record_pos_s{
+    text-align: center;
+    margin-bottom: 70px;
+}
+.record_doc_s{
+    text-align: center;
+    margin-bottom: 70px;
+}
+.conf_s {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.record_time_s {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.med_s {
+    .container{
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+}
+.del_record_s {
+    text-align: center;
+    margin-bottom: 70px;
+    &__block {
+        font-size: 1.4rem;
+        margin: 20px auto;
+        width: 40vw;
+        min-width: 320px;
+        background-color: $secondary-color-o;
+        a {
+            color: red;
+        }
+        a:hover {
+            color: red;
+        }
+    }
+}
+.list_doc_s {
+    table{
+        width: 70vw;
+        margin: 0 auto;
+        border: solid black 1px;
+        text-align: center;
+        tr {
+            background-color: $main-color-o;
+        }
+        td {
+            border: solid black 1px;
+            background-color: $secondary-color-o;
+            margin-top: 10px;
+        }
+    }
+}
+footer {
+    width: 100%;
+    height: 40px;
+    background-color: $secondary-color;
+    position: fixed;
+    bottom: 0;
+}
 
 @media screen and (max-width: 768px) {
     .s-r{
@@ -51,12 +206,49 @@ header{
 }
 
 @media screen and (max-width: 420px) {
-    .s-r{
-
+    body {
         
+        .form-control {
+            font-size: 1rem;
+        }
+    }
+    .s-r{ 
         .col {
             min-width: 200px;
         }
         
     }
+    .list_doc_s {
+        table{
+            font-size: 1.1rem;
+        }
+    }
+    .hos_s {
+        &__name {
+            position: relative;
+            margin: 0 auto;
+            left: 0;
+            
+        }
+    }
+}
+@media print {
+    header{
+        display: none;
+        }
+    footer {
+        display: none;
+    }
+    .back-btn {
+        display: none;
+    }
+    .med_s{
+        font-family: serif;
+        input {
+            background-color: #fff;
+            color: black;
+        }
+       
+    }
+
 }

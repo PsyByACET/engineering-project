@@ -1,7 +1,7 @@
 <?php
     include('head.php');
+    echo '<a href="record_position.php" class="back-btn" style="margin-left: 20px;"><img style="width: 80px; " src="img/back.svg" alt=""></a><br>';
     
-    print_r($_GET['position']);
     setcookie('position', $_GET['position'], time() + 3600, "/" );
     
 
@@ -10,17 +10,16 @@
 
     $pos_id = mysqli_query($db,"SELECT * FROM `positions` WHERE `position` = '$b'");
     while( $u = mysqli_fetch_assoc($pos_id)){
-        echo $u['position_id'];
         $c = $u['position_id'];
         setcookie('position_id', $c, time() + 3600, "/" );
     }
     
-    echo '<br>';
 ?>
 
-<section>
+<section class="record_doc_s">
             <?php 
-
+            echo '<h1>'. $_GET['position'] . '</h1><br>';
+           
             $doc = mysqli_query($db,"SELECT * FROM `workers` WHERE `position` = '$c'");
             while( $uu = mysqli_fetch_assoc($doc)){
                 $dp =$uu['hospital'];
@@ -28,8 +27,8 @@
                 while( $eee = mysqli_fetch_assoc($d)){
                     $dd = $eee['name_hospital'];
                     echo '<form action="kostil.php" method="get">
-                        <input type="submit" name="name_hospital" value="' . $dd . '">
-                        </form>';
+                        <input type="submit" class="btn my_list_button" name="name_hospital" value="' . $dd . '">
+                        </form><br>';
                         
                 }  
             }

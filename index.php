@@ -1,18 +1,29 @@
 <?php
     include('head.php'); 
+    setcookie('user_find', 0, time() + 3600, "/" );
+    setcookie('card_find', 0, time() + 3600, "/" );
 ?>
 
     <section class="main-s">
         <div class="container">
             <div class="main-events">
-                <div class="main-events__medical-staff">
-                    <a href="list-positions.php">medical-staff</a>
+                <div class="main-events__medical-staff main-events__block">
+                    <a href="list-positions.php">
+                        <img src="img/hospital.svg" alt=""> <br>
+                        Просмотреть медицинский персонал <br> и больницы
+                    </a>
                 </div>
-                <div class="main-events__medical-card">
-                    <a href="medical-card.php">medical-card</a>
+                <div class="main-events__medical-card main-events__block">
+                    <a href="medical-card.php">
+                        <img src="img/mec_card.svg" alt=""><br>
+                        Просмотреть вашу медицинскую <br> карту
+                    </a>
                 </div>
-                <div class="main-events__record">
-                    <a href="record_position.php">record</a>
+                <div class="main-events__record main-events__block">
+                    <a href="record_position.php">
+                        <img src="img/doctor.svg" alt=""><br>
+                        записаться на приём
+                    </a>
                 </div>
             </div>
         </div>

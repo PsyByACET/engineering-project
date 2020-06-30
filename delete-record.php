@@ -33,6 +33,6 @@
 
 
     }
-    header('Location: record_position.php');
+    header('Location: record_position.php#rec');
 
 ?>

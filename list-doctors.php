@@ -1,5 +1,6 @@
 <?php
     include('head.php'); 
+    echo '<a href="list-positions.php" class="back-btn" style="margin-left: 20px"><img style="width: 80px; " src="img/back.svg" alt=""></a><br>';
     print_r($_GET['position']);
     $b = $_GET['position'];
 
@@ -10,28 +11,28 @@
         $c = $u['position_id'];
     }
     
-    echo '<br>';
+    
 
     
 ?>
+            
 
-
-<section>
+<section class="list_doc_s">
+    
     <table>
-        <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th></tr>
+        <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Больница</th></tr>
             <?php 
             $doc = mysqli_query($db,"SELECT * FROM `workers` WHERE `position` = '$c'");
             while( $uu = mysqli_fetch_assoc($doc)){
                 echo '<tr> <td>' . $uu['last_name'] . '</td>
-                <td><a href="#">' . $uu['first_name'] . '</a></td>
+                <td>' . $uu['first_name'] . '</td>
                 <td>' . $uu['middle_name'] . '</td>
                 <td> 
-                    <form action="hos.php" method="get">
-                        <input type="submit" name="position" value="' . $uu['hospital'] . '">
-                    </form> 
+                <form action="hos.php" method="get">
+                <a href="#" onclick="parentNode.submit();">' . $uu['hospital'] . '</a>
+                <input type="hidden" name="position" value="' . $uu['hospital'] . '"/>
+            </form>
                 </td>
-                <td>' . $uu['email'] . '</td>
-                <td>' . $uu['number'] . '</td>
                 </tr>';
             }
             ?>

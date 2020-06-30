@@ -1,6 +1,38 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 1.5rem;
+  font-family: "Oswald", sans-serif;
+}
+body .my_button {
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 0px;
+  color: white;
+  box-sizing: content-box;
+  padding-bottom: 15px;
+  background-color: #00efd1;
+}
+body .my_button:hover {
+  color: black;
+}
+body .my_list_button {
+  width: 40vw;
+  min-width: 260px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 0px;
+  box-sizing: content-box;
+  padding-bottom: 15px;
+  background-color: #00efd1;
+}
+body .my_list_button:hover {
+  background-color: #09f;
+}
+body .form-control {
+  font-size: 1.4rem;
 }
 
 .container {
@@ -11,7 +43,7 @@ body {
 header {
   width: 100%;
   height: 60px;
-  background-color: #c4c4c4;
+  background-color: #00efd1;
 }
 header .head {
   width: 100%;
@@ -19,10 +51,32 @@ header .head {
   display: flex;
   justify-content: space-between;
 }
+header .head__logo {
+  width: 60px;
+}
 
+.main-s {
+  margin-top: 12vw;
+  margin-bottom: 70px;
+}
 .main-s .main-events {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+.main-s .main-events__block {
+  text-align: center;
+}
+.main-s .main-events__block a {
+  transition: 0.6s;
+}
+.main-s .main-events__block a:hover {
+  text-shadow: 1px -1px 10px #00efd1;
+  text-decoration: none;
+}
+.main-s img {
+  width: 16vw;
+  min-width: 180px;
 }
 
 .s-r {
@@ -30,6 +84,7 @@ header .head {
 }
 .s-r form {
   width: 40vw;
+  min-width: 260px;
 }
 .s-r .row {
   display: flex;
@@ -38,13 +93,149 @@ header .head {
   min-width: 348px;
 }
 
+.hos_s__name {
+  background-color: rgba(0, 0, 0, 0.312);
+  color: white;
+  width: 290px;
+  padding: 20px;
+  position: absolute;
+  left: 12%;
+  top: 10%;
+  text-align: center;
+}
+
+.contacts_s {
+  margin-bottom: 100px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.contacts_s__block {
+  text-align: center;
+  width: 300px;
+}
+.contacts_s__block span {
+  font-size: 2rem;
+  color: #00efd1;
+}
+
+.list_pos_s {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.record_pos_s {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.record_doc_s {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.conf_s {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.record_time_s {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.med_s .container {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.del_record_s {
+  text-align: center;
+  margin-bottom: 70px;
+}
+.del_record_s__block {
+  font-size: 1.4rem;
+  margin: 20px auto;
+  width: 40vw;
+  min-width: 320px;
+  background-color: rgba(0, 153, 255, 0.452);
+}
+.del_record_s__block a {
+  color: red;
+}
+.del_record_s__block a:hover {
+  color: red;
+}
+
+.list_doc_s table {
+  width: 70vw;
+  margin: 0 auto;
+  border: solid black 1px;
+  text-align: center;
+}
+.list_doc_s table tr {
+  background-color: #00efcf70;
+}
+.list_doc_s table td {
+  border: solid black 1px;
+  background-color: rgba(0, 153, 255, 0.452);
+  margin-top: 10px;
+}
+
+footer {
+  width: 100%;
+  height: 40px;
+  background-color: #09f;
+  position: fixed;
+  bottom: 0;
+}
+
 @media screen and (max-width: 768px) {
   .s-r form {
     width: 80vw;
   }
 }
 @media screen and (max-width: 420px) {
+  body .form-control {
+    font-size: 1rem;
+  }
+
   .s-r .col {
     min-width: 200px;
+  }
+
+  .list_doc_s table {
+    font-size: 1.1rem;
+  }
+
+  .hos_s__name {
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+  }
+}
+@media print {
+  header {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .back-btn {
+    display: none;
+  }
+
+  .med_s {
+    font-family: serif;
+  }
+  .med_s input {
+    background-color: #fff;
+    color: black;
   }
 }

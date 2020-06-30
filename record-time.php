@@ -1,34 +1,30 @@
 <?php
     include('head.php');
+    echo '<a href="record-doctors.php?position='. $_COOKIE['position'].'" class="back-btn" style="margin-left: 20px;"><img style="width: 80px; " src="img/back.svg" alt=""></a><br>';
     
+
     $hos_id = $_COOKIE['hospital_id'];
     $pos_id = $_COOKIE['position_id'];
 
     
 
-    echo $_COOKIE['position'];
-    echo '<br>';
     
-    echo $_COOKIE['name_hospital'];
-    echo '<br>';
-    echo $_COOKIE['hospital_id'];
-    echo '<br>';
-    echo $_COOKIE['position_id'];
+
     
 
 ?>
 
-<section>
-<form action="get-date.php" method="post">
-    <a href="#" onclick="parentNode.submit();">ТЫК</a>
-    <input type="hidden" name="get" value="www.photo.com"/>
-</form>
+<section class="record_time_s">
 
 <?php
+    echo $_COOKIE['position'];
+    echo '<br>';
+    echo $_COOKIE['name_hospital'];
+    echo '<br>';
     $d = mysqli_query($db,"SELECT * FROM `time_r` WHERE `hospital` = '$hos_id' AND `position` = '$pos_id'");
     while( $eee = mysqli_fetch_assoc($d)){
         echo '<form action="get-date.php" method="get">
-                <a href="#" onclick="parentNode.submit();">'.$eee['date'].'</a>
+                <a href="#" class="btn my_button" onclick="parentNode.submit();">'.$eee['date'].'</a>
                 <input type="hidden" name="get" value="'.$eee['date'].'"/>
             </form>'; 
         
@@ -49,7 +45,7 @@
 
 </section>
 
-<section>
+<section class="record_time_s">
 
 <?php
     $p_date = $_COOKIE['date'];
@@ -58,51 +54,51 @@
 
     if($t11 == 0 && $p_date == '2020-07-03'):
         echo  '<form action="kostil2.php" method="get">
-                <a href="#" onclick="parentNode.submit();">9-20</a>
+                <a href="#" class="btn my_button" onclick="parentNode.submit();">9-20</a>
                 <input type="hidden" name="time" value="time1"/>
             </form> '; endif;
         if($t12 == 0 && $p_date == '2020-07-03'):
         echo  '<form action="kostil2.php" method="get">
-                <a href="#" onclick="parentNode.submit();">10-20</a>
+                <a href="#" class="btn my_button" onclick="parentNode.submit();">10-20</a>
                 <input type="hidden" name="time" value="time2"/>
             </form> '; endif;
         if($t13 == 0 && $p_date == '2020-07-03'):
         echo  '<form action="kostil2.php" method="get">
-                <a href="#" onclick="parentNode.submit();">13-40</a>
+                <a href="#" class="btn my_button" onclick="parentNode.submit();">13-40</a>
                 <input type="hidden" name="time" value="time3"/>
             </form> '; endif;
 
 
         if($t21 == 0 && $p_date == '2020-07-08'):
         echo '<form action="kostil2.php" method="get">
-            <a href="#" onclick="parentNode.submit();">9-20</a>
+            <a href="#" class="btn my_button" onclick="parentNode.submit();">9-20</a>
             <input type="hidden" name="time" value="time1"/>
         </form>'; endif;
         if($t22 == 0 && $p_date == '2020-07-08'):
             echo '<form action="kostil2.php" method="get">
-                <a href="#" onclick="parentNode.submit();">10-20</a>
+                <a href="#" class="btn my_button" onclick="parentNode.submit();">10-20</a>
                 <input type="hidden" name="time" value="time2"/>
             </form>'; endif;
         if($t23 == 0 && $p_date == '2020-07-08'):
             echo '<form action="kostil2.php" method="get">
-                <a href="#" onclick="parentNode.submit();">13-40</a>
+                <a href="#" class="btn my_button" onclick="parentNode.submit();">13-40</a>
                 <input type="hidden" name="time" value="time3"/>
             </form>'; endif;
 
             
         if($t31 == 0 && $p_date == '2020-07-14'):
         echo '<form action="kostil2.php" method="get">
-            <a href="#" onclick="parentNode.submit();">9-20</a>
+            <a href="#" class="btn my_button" onclick="parentNode.submit();">9-20</a>
             <input type="hidden" name="time" value="time1"/>
         </form>'; endif; 
         if($t32 == 0 && $p_date == '2020-07-14'):
             echo '<form action="kostil2.php" method="get">
-                <a href="#" onclick="parentNode.submit();">10-20</a>
+                <a href="#" class="btn my_button" onclick="parentNode.submit();">10-20</a>
                 <input type="hidden" name="time" value="time2"/>
             </form>'; endif;
         if($t33 == 0 && $p_date == '2020-07-14'):
             echo '<form action="kostil2.php" method="get">
-                <a href="#" onclick="parentNode.submit();">13-40</a>
+                <a href="#" class="btn my_button" onclick="parentNode.submit();">13-40</a>
                 <input type="hidden" name="time" value="time3"/>
             </form>'; endif; 
 
