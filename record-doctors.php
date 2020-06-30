@@ -2,6 +2,9 @@
     include('head.php');
     
     print_r($_GET['position']);
+    setcookie('position', $_GET['position'], time() + 3600, "/" );
+    
+
     $b = $_GET['position'];
 
 
@@ -9,39 +12,35 @@
     while( $u = mysqli_fetch_assoc($pos_id)){
         echo $u['position_id'];
         $c = $u['position_id'];
+        setcookie('position_id', $c, time() + 3600, "/" );
     }
     
     echo '<br>';
 ?>
 
 <section>
-    <table>
-                    
-        <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th></tr>
             <?php 
+
             $doc = mysqli_query($db,"SELECT * FROM `workers` WHERE `position` = '$c'");
             while( $uu = mysqli_fetch_assoc($doc)){
-                echo '<tr> <td>' . $uu['last_name'] . '</td>
-                <td><a href="#">' . $uu['first_name'] . '</a></td>
-                <td>' . $uu['middle_name'] . '</td>
-                <td> 
-                    <form action="hos.php" method="get">
-                        <input type="submit" name="position" value="' . $uu['hospital'] . '">
-                    </form> 
-                </td>
-                <td>' . $uu['number'] . '</td>
-                <td> 
-                <input type="date" min="'. date('Y-m-d') .'" max="2020-07-30" name="position"  value="' . $uu['hospital'] . '">
-                <input type="time" min="08:00" max="21:00" step="600" name="position"  value="' . $uu['hospital'] . '">
-                </td>
-                </tr>';
+                $dp =$uu['hospital'];
+                $d = mysqli_query($db,"SELECT * FROM `hospitals` WHERE `hospital_id` = '$dp'");
+                while( $eee = mysqli_fetch_assoc($d)){
+                    $dd = $eee['name_hospital'];
+                    echo '<form action="kostil.php" method="get">
+                        <input type="submit" name="name_hospital" value="' . $dd . '">
+                        </form>';
+                        
+                }  
             }
             ?>
         
     </table>
     
 </section>
+<h2>
 
+</h2>
 <?php
     include('foot.php'); 
 ?>

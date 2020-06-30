@@ -11,7 +11,7 @@
     $name_user_f = $db->query("SELECT * FROM `patients` WHERE `login` = '$login'");
         while( $uu = mysqli_fetch_assoc($name_user_f)){
             $name_user = $uu['last_name'] .' '. $uu['first_name'] .' '. $uu['middle_name'];
-            echo $name_user;
+            setcookie('user_id', $uu['patient_id'], time() + 3600, "/" );
             
         }
 
