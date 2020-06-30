@@ -13,26 +13,26 @@
 <?php
 echo '<section class="hos_s " style="background: url(img/'.$_GET['position'].'.jpg) no-repeat center top / cover; height: 100vh;">'
 ?>
-    <div class="hos_s__name ">
+    <div class="hos_s__name wow bounceInLeft">
         <?php
             echo $name;
         ?>
     </div>
 </section>
 <section class="contacts_s">
-    <div class="contacts_s__fio contacts_s__block">
+    <div class="contacts_s__fio contacts_s__block wow bounceInLeft">
         <?php
             echo '<span>Заведущий</span><br>';
             echo $fio;
         ?>
     </div>
-    <div class="contacts_s__location contacts_s__block">
+    <div class="contacts_s__location contacts_s__block wow bounceInUp">
         <?php
             echo '<span>Адресс</span><br>';
             echo $location;
         ?>
     </div>
-    <div class="contacts_s__number-contact contacts_s__block">
+    <div class="contacts_s__number-contact contacts_s__block wow bounceInRight">
         <?php
             echo '<span>Регистратура</span><br>';
             echo $number_contact;

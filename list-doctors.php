@@ -18,7 +18,7 @@
 
 <section class="list_doc_s">
     <h1 style="text-align: center;">Специальность - <?php echo $_GET['position']; ?></h1>
-    <table>
+    <table class="wow backInRight">
         <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Больница</th></tr>
             <?php 
             $doc = mysqli_query($db,"SELECT * FROM `workers` WHERE `position` = '$c'");

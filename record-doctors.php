@@ -27,14 +27,11 @@
                 while( $eee = mysqli_fetch_assoc($d)){
                     $dd = $eee['name_hospital'];
                     echo '<form action="kostil.php" method="get">
-                        <input type="submit" class="btn my_list_button" name="name_hospital" value="' . $dd . '">
-                        </form><br>';
-                        
+                        <input type="submit" class="btn my_list_button wow bounceInLeft" name="name_hospital" value="' . $dd . '">
+                        </form><br>';        
                 }  
             }
             ?>
-        
-    </table>
     
 </section>
 <h2>

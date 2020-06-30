@@ -15,13 +15,13 @@
     while( $u = mysqli_fetch_assoc($r)){
         echo '<br>';
         echo '<form action="record-doctors.php" method="get">
-                <input type="submit" class="btn my_list_button" name="position" value="' . $u['position'] . '">
+                <input type="submit" class="btn my_list_button wow bounceInLeft" name="position" value="' . $u['position'] . '">
             </form>';
     }
 ?>
 
 </section>
-<section class="del_record_s" id="rec">
+<section class="del_record_s wow bounceInRight" id="rec">
     
     <?php 
     echo '<h1>Ваши записи на приём</h1>';

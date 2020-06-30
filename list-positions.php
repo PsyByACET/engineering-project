@@ -12,7 +12,7 @@
     while( $u = mysqli_fetch_assoc($r)){
         echo'<br>';
         echo '<form action="list-doctors.php" method="get">
-                <input type="submit" class="btn my_list_button" name="position" value="' . $u['position'] . '">
+                <input type="submit" class="btn my_list_button wow bounceInUp" name="position" value="' . $u['position'] . '">
             </form>';
     }
 ?>
