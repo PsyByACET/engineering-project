@@ -2,6 +2,7 @@
     include('head.php'); 
     echo '<a href="index.php" class="back-btn" style="margin-left: 20px;"><img style="width: 80px; " src="img/back.svg" alt=""></a><br>';
     $i=0;
+    $user_id = $_COOKIE['user_id'];
 ?>
 <?php 
     if($_COOKIE['user'] != ''):  
@@ -24,7 +25,7 @@
     
     <?php 
     echo '<h1>Ваши записи на приём</h1>';
-    $r = mysqli_query($db,"SELECT * FROM `records`");
+    $r = mysqli_query($db,"SELECT * FROM `records` WHERE `patient` = '$user_id'");
     while( $u = mysqli_fetch_assoc($r)){
         $i++;
         echo '<div class="del_record_s__block">';

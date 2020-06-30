@@ -1,13 +1,12 @@
 <?php
     include('head.php'); 
     echo '<a href="list-positions.php" class="back-btn" style="margin-left: 20px"><img style="width: 80px; " src="img/back.svg" alt=""></a><br>';
-    print_r($_GET['position']);
+
     $b = $_GET['position'];
 
 
     $pos_id = mysqli_query($db,"SELECT * FROM `positions` WHERE `position` = '$b'");
     while( $u = mysqli_fetch_assoc($pos_id)){
-        echo $u['position_id'];
         $c = $u['position_id'];
     }
     
@@ -18,7 +17,7 @@
             
 
 <section class="list_doc_s">
-    
+    <h1 style="text-align: center;">Специальность - <?php echo $_GET['position']; ?></h1>
     <table>
         <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Больница</th></tr>
             <?php 

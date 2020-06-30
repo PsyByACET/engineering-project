@@ -37,6 +37,13 @@
 
                         <button class="btn my_button">Вход</button>
                     </form>
+                    <h1>Войти как админ</h1>
+                    <form action="auth_admin.php" method="post">
+                        <input type="text" class="form-control" name="login" id="login" placeholder="Логин"><br>
+                        <input type="password" class="form-control" name="pass" id="pass" placeholder="Пароль"><br>
+
+                        <button class="btn my_button">Вход</button>
+                    </form>
                 </div>
             </div>
         <h3>Оставшиеся медицинские карты</h3>

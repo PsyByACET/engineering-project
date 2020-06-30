@@ -7,6 +7,7 @@
 
 
 <?php
+    echo '<h1>Выберите Специальность</h1>';
     $r = mysqli_query($db,"SELECT * FROM `positions`");
     while( $u = mysqli_fetch_assoc($r)){
         echo'<br>';
