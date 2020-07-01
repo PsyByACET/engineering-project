@@ -14,7 +14,7 @@
         echo $u['time_record']. ' <br>';
         echo $u['hospital']. ' <br>';
         echo 'К '.$u['position']. 'у<br>';
-        echo '<form action="delete-record.php" method="get">
+        echo '<form action="delete-record-admin.php" method="get">
                 <a href="#" onclick="parentNode.submit();">Удалить запись</a>
                 <input type="hidden" name="record_id" value="'.$u['record_id'].'">
                 <input type="hidden" name="time" value="'.$u['time_record'].'">

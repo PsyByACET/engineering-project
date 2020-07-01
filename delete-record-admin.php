@@ -31,6 +31,6 @@
     while( $u = mysqli_fetch_assoc($r)){
         
     }
-    header('Location: record_position.php#rec');
+    header('Location: admin.php');
 
 ?>
